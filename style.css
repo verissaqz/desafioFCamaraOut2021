@@ -18,7 +18,7 @@
     margin: 0px
 }
 body {
-    background-color: var(--color-background);
+    background-color: var(--wild-blue-wonder);
     font-family: var(--fonte-padrao);
 }
 
@@ -218,9 +218,43 @@ span{
 
 #resultado {
     color: var(--tango);
-    text-shadow: 2px 2px 1px var(--jacarta);
+    text-shadow: 0 0 1px 3px var(--pale-slate);
     font-size: 24px;
     font-weight: 700;
     margin: 24px;
     height: 24px;
+}
+
+.resultadoVagas p{
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+    color: var(--light-color);
+    text-shadow: 2px 2px 1px var(--jacarta);
+}
+
+#tabelaVagas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+#tabelaVagas p {
+    color: var(--jacarta);
+    text-shadow: none;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+table, th, td {
+    font-size: 20px;
+    border: 1px solid var(--pale-slate);
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    text-align: center;
 }

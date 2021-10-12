@@ -75,7 +75,7 @@ function estacaoParaNum (dadosColaborador){
     return numEstacao
 }
 
-var numMaxVagasPorEstacao = 3 //número máximo de vagas por estação
+var numMaxVagasPorEstacao = 5 //número máximo de vagas por estação
 var listaColabAgendados =[] //vetor para guardar as informações dos colaboradores agendados
 
 function agendar() {
@@ -95,6 +95,34 @@ function agendar() {
         resultado.innerHTML = "Agendamento realizado com sucesso!"
     } else {
         resultado.innerHTML = `Estação ${novoAgendamento.estacao} lotada nesse dia. Tente outra estação ou outro dia`
+        
     }
     console.log(agendamento)
+    exibeVagasNaTela()
 };
+
+function exibeVagasNaTela(){
+    var elemento1 = atualizaVagasEscritório(0);
+    var vagasSP = document.getElementById("tabelaSP")
+    vagasSP.innerHTML = elemento1;
+
+    var elemento2 = atualizaVagasEscritório(1);
+    var vagasSantos = document.getElementById("tabelaSantos")
+    vagasSantos.innerHTML = elemento2
+}
+
+function atualizaVagasEscritório(indiceEscritorio) {
+    var elemento = "";
+
+    elemento += "<tr><td>Segunda-feira</td><td>"+agendamento[indiceEscritorio][0][0]+"</td><td>"+agendamento[indiceEscritorio][0][1]+"</td><td>"+agendamento[indiceEscritorio][0][2]+"</td><td>"+agendamento[indiceEscritorio][0][3]+"</td></tr>"
+
+    elemento += "<tr><td>Terça-feira</td><td>"+agendamento[indiceEscritorio][1][0]+"</td><td>"+agendamento[indiceEscritorio][1][1]+"</td><td>"+agendamento[indiceEscritorio][1][2]+"</td><td>"+agendamento[indiceEscritorio][1][3]+"</td></tr>"
+
+    elemento += "<tr><td>Quarta-feira</td><td>"+agendamento[indiceEscritorio][2][0]+"</td><td>"+agendamento[indiceEscritorio][2][1]+"</td><td>"+agendamento[indiceEscritorio][2][2]+"</td><td>"+agendamento[indiceEscritorio][2][3]+"</td></tr>"
+
+    elemento += "<tr><td>Quinta-feira</td><td>"+agendamento[indiceEscritorio][3][0]+"</td><td>"+agendamento[indiceEscritorio][3][1]+"</td><td>"+agendamento[indiceEscritorio][3][2]+"</td><td>"+agendamento[indiceEscritorio][3][3]+"</td></tr>"
+
+    elemento += "<tr><td>Sexta-feira</td><td>"+agendamento[indiceEscritorio][4][0]+"</td><td>"+agendamento[indiceEscritorio][4][1]+"</td><td>"+agendamento[indiceEscritorio][4][2]+"</td><td>"+agendamento[indiceEscritorio][4][3]+"</td></tr>"
+
+    return elemento
+}
